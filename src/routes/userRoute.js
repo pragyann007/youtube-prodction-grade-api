@@ -1,8 +1,11 @@
 import express from "express"
-import { register } from "../controllers/userControllers.js";
+import { login, register, subscribe, updateProfile } from "../controllers/userControllers.js";
+import { auth } from "../middlewares/auth.js";
 
 export const userRoute = express.Router();
 
 userRoute.post("/register",register);
-userRoute.get("/")
+userRoute.post("/login",login);
+userRoute.put("/update-profile",auth,updateProfile);
+userRoute.post("/subscribe",auth,subscribe);
 

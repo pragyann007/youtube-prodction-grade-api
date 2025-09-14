@@ -5,6 +5,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    phone:{
+        type:String,
+        required:true
+    },
     email:{
         type:String,
         required:true
@@ -15,9 +19,11 @@ const userSchema = new mongoose.Schema({
     },
     logoUrl:{
         type:String,
+        default:""
     },
     logoId:{
-        type:String
+        type:String,
+        default:""
     },
     subscribers:{
         type:Number,

@@ -4,12 +4,17 @@ import cors from "cors";
 import connectDb from "./config/db.js";
 import {userRoute} from "./routes/userRoute.js";
 import fileUpload from "express-fileupload";
+import cookieParser from "cookie-parser";
+
+
+
 
 dotenv.config();
 connectDb();
 
 
 const app = express();
+app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload({
