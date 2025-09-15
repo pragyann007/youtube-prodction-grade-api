@@ -5,6 +5,8 @@ import connectDb from "./config/db.js";
 import {userRoute} from "./routes/userRoute.js";
 import fileUpload from "express-fileupload";
 import cookieParser from "cookie-parser";
+import { videoRoute } from "./routes/videoRoute.js";
+import { commentRoute } from "./routes/commentRoute.js";
 
 
 
@@ -23,6 +25,8 @@ app.use(fileUpload({
 }))
 
 app.use("/api/auth",userRoute)
+app.use("/api/video",videoRoute)
+app.use("/api/comment",commentRoute)
 
 
 

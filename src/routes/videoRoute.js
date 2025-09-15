@@ -1,8 +1,8 @@
 import express from "express"
-import { deleteVideo,  dislikevideo,  getallVideo, getVideoByCategory, getVideoById, getVideoByTags, likevideo, myVideo, updateVideo, upload } from "../controllers/videoController";
-import { auth } from "../middlewares/auth";
+import { deleteVideo,  dislikevideo,  getallVideo, getVideoByCategory, getVideoById, getVideoByTags, likevideo, myVideo, updateVideo, upload } from "../controllers/videoController.js";
+import { auth } from "../middlewares/auth.js";
 
-const videoRoute = express.Router();
+export const videoRoute = express.Router();
 
 videoRoute.post("/upload",auth,upload);
 videoRoute.put("/update:id",auth,updateVideo);
