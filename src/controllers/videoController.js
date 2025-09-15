@@ -187,3 +187,28 @@ export const getallVideo = async (req,res)=>{
     }
 
 }
+
+export const myVideo = async(req,res)=>{
+    try {
+
+        const userId = req.users._id ;
+        const video = await Video.find({user_id:userId}).sort({createdAt:-1});
+
+        return res.status(200).json({sucess:true,message:"My videos fetched sucess",video})
+
+
+        
+
+        
+    } catch (error) {
+
+        console.log(error)
+        return res.status({
+            sucess:false,
+            message:"Server error while fetching my videos..",
+            error
+        })
+
+        
+    }
+}
